@@ -24,17 +24,17 @@ gen make_sqrt = sqrt(price)
 gen maker = word(make, 1)
 
 * Useful command: egen
-egen avg_price_by_model = mean(price), by(shortmake)
+egen avg_price_by_model = mean(price), by(maker)
 
 * Useful command on the dataset
 preserve /* saves the current state of dataset so that you can restore later */
-    collapse price, by(shortmake)
+    collapse price, by(maker)
     browse /* notice how the dataset was aggregated */
 restore
 
 preserve
     help collapse /* always look at help for exact syntax */
-    collapse (p50) price (sd) sd_price=price, by(shortmake)
+    collapse (p50) price (sd) sd_price=price, by(maker)
 restore
 
 * Look at dates
