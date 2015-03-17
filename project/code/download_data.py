@@ -227,7 +227,7 @@ def extract_gamelog_row(row, list_players):
     """
     info_dict = {}
 
-    pattern_info_line = # fill in here re.compile("(text-align:left;|text-align:center;)")
+    pattern_info_line = # fill in here
     pieces = row.find_all # fill in here
 
     # filter rows of timeout, end of quarter
@@ -244,7 +244,7 @@ def extract_gamelog_row(row, list_players):
         elif is_result(text):
             info_dict["result"] = text
             info_dict["away_score"] = # fill in here
-            info_dict["home_score"] = # fill in here int(text.split("-")[1])
+            info_dict["home_score"] = # fill in here
         else:
             info_dict["text"] = text
 
@@ -254,7 +254,7 @@ def extract_gamelog_row(row, list_players):
             else:
                 info_dict["home_or_away"] = # fill in here
 
-            info_dict["player"] = # fill in here get_player_in_action(text, list_players)
+            info_dict["player"] = # fill in here
             info_dict["shot_success"] = parse_shot_success(text)
 
             if # fill in here :
@@ -352,7 +352,7 @@ def structure_gamelog_info(game_id,
 
     list_info_dicts = []
     for row in report_lines:
-        info_dict = # fill in here extract_gamelog_row(row, list_players)
+        info_dict = # fill in here
         info_dict["game_id"] = game_id
         # fill in here: add info_dict to list_info_dicts
 
